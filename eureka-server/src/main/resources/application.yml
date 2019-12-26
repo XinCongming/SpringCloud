@@ -1,0 +1,19 @@
+server:
+  port: 10086 # 端口
+eureka:          #eureka服务注册
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka  #高可用
+  instance:
+    prefer-ip-address: true #可以将IP注册到Eureka Server上,如果不配置就是机器的主机名
+    ip-address: 127.0.0.1
+spring:
+  application:
+    name: eureka-server #服务名称，不写否则就是UNKNOWN
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 3000   #设置hystrix超时时间
